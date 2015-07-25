@@ -50,7 +50,7 @@ class TwitterQuery(Task):
 
     def run(self):
         keywords = " ".join(['"%s"' % kw for kw in self.kw])
-	output = shellout("twitter_streaming.py -t {interval} {keywords} > {output}", keywords=keywords, interval=INTERVAL)
+        output = shellout("twitter_streaming.py -t {interval} {keywords} > {output}", keywords=keywords, interval=INTERVAL)
         luigi.File(output).move(self.output().path)
 
     def output(self):

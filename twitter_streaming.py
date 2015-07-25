@@ -94,5 +94,6 @@ if __name__ == '__main__':
             stream.filter(track=args.keywords)
     except Shutdown:
         sys.exit(0)
-    except Exception:
+    except Exception as exc:
+        print(exc, file=sys.stderr)
         sys.exit(1)
