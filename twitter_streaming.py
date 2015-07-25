@@ -25,21 +25,18 @@ from tweepy import OAuthHandler
 from tweepy import Stream
 from tweepy.streaming import StreamListener
 import argparse
-import json
 import os
 import signal
 import sys
+import time
 
 class Shutdown(Exception):
     pass
 
-with open(".credentials.json") as handle:
-    credentials = json.load(handle)
-
-access_token = credentials.get('twitter_access_token')
-access_token_secret = credentials.get('twitter_access_token_secret')
-consumer_key = credentials.get('twitter_consumer_key')
-consumer_secret = credentials.get('twitter_consumer_secret')
+access_token = os.environ.get('TWITTER_ACCESS_TOKEN')
+access_token_secret = os.environ.get('TWITTER_ACCESS_TOKEN_SECRET')
+consumer_key = os.environ.get('TWITTER_CONSUMER_KEY')
+consumer_secret = os.environ.get('TWITTER_CONSUMER_SECRET')
 
 should_shutdown = False
 

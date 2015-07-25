@@ -1,5 +1,5 @@
-Batch-processing and latency
-============================
+NRT scratchpad
+==============
 
 A Twitter keyword search streamer.
 
