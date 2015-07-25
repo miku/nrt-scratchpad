@@ -2,11 +2,13 @@
 # coding: utf-8
 
 """
-Environment variables:
+Relevant environment variables:
 
-    # where to store data artifacts,
-    # defaults to os.path.join(tempfile.gettempdir(), 'artifacts')
+    # where to store data artifacts
     NRT_SCRATCHPAD_BASE=/path/to/dir
+
+    # TMPDIR and NRT_SCRATCHPAD_BASE must reside on the same device for now
+    TMPDIR=/path/to/dir
 
     # duration of one stream or interval between streams
     NRT_SCRATCHPAD_INTERVAL=60
