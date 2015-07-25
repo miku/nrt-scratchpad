@@ -64,8 +64,13 @@ Vagrant.configure(2) do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
-  # config.vm.provision "shell", inline: <<-SHELL
-  #   sudo apt-get update
-  #   sudo apt-get install -y apache2
-  # SHELL
+  config.vm.provision "shell", inline: <<-SHELL
+    set -e -u
+    sudo apt-get update
+    sudo apt-get install -y git bash-completion virtualenvwrapper build-essential python-dev
+    mkdir -p /home/vagrant/code/miku
+    cd /home/vagrant/code/miku && git clone https://github.com/miku/nrt-scratchpad.git
+    sudo mkdir -p /usr/local/bin && cp /home/vagrant/code/miku/nrt-scratchpad/twitter_streaming.py /usr/local/bin
+    chmod +x /usr/local/bin/twitter_streaming.py
+  SHELL
 end
