@@ -21,6 +21,7 @@ import sys
 import time
 
 class Shutdown(Exception):
+    """ To distinguish between errors and regular shutdowns. """
     pass
 
 # cf. http://git.io/vYuI5
