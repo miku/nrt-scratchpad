@@ -10,7 +10,7 @@ Query with a timeout (defaults to 60s) and some keywords:
 
 """
 
-from __future__ import print_function
+from __future__ import print_function, unicode_literals
 from tweepy import OAuthHandler
 from tweepy import Stream
 from tweepy.streaming import StreamListener
@@ -23,10 +23,11 @@ import time
 class Shutdown(Exception):
     pass
 
-access_token = os.environ.get('TWITTER_ACCESS_TOKEN')
-access_token_secret = os.environ.get('TWITTER_ACCESS_TOKEN_SECRET')
-consumer_key = os.environ.get('TWITTER_CONSUMER_KEY')
-consumer_secret = os.environ.get('TWITTER_CONSUMER_SECRET')
+# cf. http://git.io/vYuI5
+access_token = unicode(os.environ.get('TWITTER_ACCESS_TOKEN'))
+access_token_secret = unicode(os.environ.get('TWITTER_ACCESS_TOKEN_SECRET'))
+consumer_key = unicode(os.environ.get('TWITTER_CONSUMER_KEY'))
+consumer_secret = unicode(os.environ.get('TWITTER_CONSUMER_SECRET'))
 
 should_shutdown = False
 
