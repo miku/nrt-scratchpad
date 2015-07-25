@@ -23,7 +23,7 @@ import os
 import tempfile
 
 BASE = os.environ.get('NRT_SCRATCHPAD_BASE', os.path.join(tempfile.gettempdir(), 'artifacts'))
-INTERVAL = os.environ.get('NRT_SCRATCHPAD_INTERVAL', 60)
+INTERVAL = int(os.environ.get('NRT_SCRATCHPAD_INTERVAL', 60))
 
 def every(seconds=10):
     """
