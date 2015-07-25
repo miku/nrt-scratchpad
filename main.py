@@ -21,7 +21,7 @@ class Task(BaseTask):
     """
     BASE is the directory, where data artifacts will be stored.
     """
-    BASE = os.path.join(tempfile.gettempdir(), 'artefacts')
+    BASE = os.path.join(tempfile.gettempdir(), 'artifacts')
 
 class TwitterQuery(Task):
     """
