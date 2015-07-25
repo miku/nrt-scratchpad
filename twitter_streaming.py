@@ -33,8 +33,9 @@ consumer_secret = unicode(os.environ.get('TWITTER_CONSUMER_SECRET'))
 should_shutdown = False
 
 class timeout:
-    def __init__(self, seconds=60, error_message='Timeout'):
+    def __init__(self, seconds=60, graceful=1, error_message='Timeout'):
         self.seconds = seconds
+        self.graceful = graceful
         self.error_message = error_message
     def handle_timeout(self, signum, frame):
         """
@@ -43,7 +44,7 @@ class timeout:
         """
         global should_shutdown
         should_shutdown = True
-        time.sleep(1)
+        time.sleep(self.graceful)
         raise Shutdown
     def __enter__(self):
         signal.signal(signal.SIGALRM, self.handle_timeout)
