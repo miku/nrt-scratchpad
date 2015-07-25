@@ -4,16 +4,6 @@
 """
 Adapted from: http://adilmoujahid.com/posts/2014/07/twitter-analytics/
 
-Put your Twitter API credentials into a file called `.credentials.json`:
-
-    $ cat .credentials.json
-    {
-        "twitter_access_token": "253232323-giuasdaszdiaszidasuduasd",
-        "twitter_access_token_secret": "ZShasdzoasdhasjkdhusdzauasd",
-        "twitter_consumer_key": "KkshdjshdjshdjshdZQH8VwZgVTV3e",
-        "twitter_consumer_secret" : "asdkasdasda9s8d9as8d098asd98a0s98d09a8sd"
-    }
-
 Query with a timeout (defaults to 60s) and some keywords:
 
     $ python twitter_streaming.py --timeout 30 london paris 'new york' moscow
