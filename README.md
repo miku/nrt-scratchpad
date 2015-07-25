@@ -14,14 +14,14 @@ keywords in a streaming manner. This can be totally separate.
 Let `twthread` (or any other real-timeish data adapter) write out results in
 regular intervals.
 
-    /tmp/twthread/2011-03-02/1405/file.ldj
-    /tmp/twthread/2011-03-02/1410/file.ldj
+    /tmp/twthread/2011-03-02/1405.ldj
+    /tmp/twthread/2011-03-02/1410.ldj
 
 Real-time up to 60s.
 
-    /tmp/twthread/2011-03-02/1401/file.ldj
-    /tmp/twthread/2011-03-02/1402/file.ldj
-    /tmp/twthread/2011-03-02/1403/file.ldj
+    /tmp/twthread/2011-03-02/1401.ldj
+    /tmp/twthread/2011-03-02/1402.ldj
+    /tmp/twthread/2011-03-02/1403.ldj
 
 `twthread` can care care of stream restarts, retries with various policies.
 
